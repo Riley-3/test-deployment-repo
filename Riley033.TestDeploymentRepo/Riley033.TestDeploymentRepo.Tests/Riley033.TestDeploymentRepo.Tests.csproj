@@ -16,4 +16,8 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Riley033.TestDeploymentRepo\Riley033.TestDeploymentRepo.csproj" />
+  </ItemGroup>
+
 </Project>

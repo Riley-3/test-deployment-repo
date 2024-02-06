@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riley033.TestDeploymentRepo", "Riley033.TestDeploymentRepo\Riley033.TestDeploymentRepo.csproj", "{273CD37C-20BE-4FB7-9CD7-7FD8A74BF3AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riley033.TestDeploymentRepo.Tests", "Riley033.TestDeploymentRepo.Tests\Riley033.TestDeploymentRepo.Tests.csproj", "{AF200C07-D91E-44E2-B15B-F1A1D3EA1DCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{273CD37C-20BE-4FB7-9CD7-7FD8A74BF3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273CD37C-20BE-4FB7-9CD7-7FD8A74BF3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273CD37C-20BE-4FB7-9CD7-7FD8A74BF3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF200C07-D91E-44E2-B15B-F1A1D3EA1DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF200C07-D91E-44E2-B15B-F1A1D3EA1DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF200C07-D91E-44E2-B15B-F1A1D3EA1DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF200C07-D91E-44E2-B15B-F1A1D3EA1DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
