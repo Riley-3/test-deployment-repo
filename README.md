@@ -1,1 +1,1 @@
-# test-deployment-repo
+Repository for testing nuget deployment with GitHub Actions
