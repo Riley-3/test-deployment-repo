@@ -1,0 +1,39 @@
+
+name: Deployment
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get next version
+      uses: reecetech/version-increment@2023.9.3
+      id: version
+      with:
+        scheme: semver
+        increment: patch
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Setup Nuget
+      run: dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/i-am-Riley/index.json"
+    - name: Restore dependencies
+      run: dotnet restore "Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo.sln"
+    - name: Build
+      run: dotnet build "Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo.sln" --configuration Release --no-restore -p:PackageVersion=${{ steps.version.outputs.version }}
+    - name: Add Tag and Release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.version.outputs.version }}
+        release_name: v${{ steps.version.outputs.version }}
+        draft: false
+        prerelease: false
+    - name: Publish to Nuget
+      run: dotnet nuget push "Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo/bin/Release/Riley033.TestDeploymentRepo.${{ steps.version.outputs.version }}.nupkg" --api-key ${{ secrets.NUGET_TOKEN }} --source "github"
+    
+
