@@ -34,6 +34,6 @@ jobs:
         draft: false
         prerelease: false
     - name: Publish to Nuget
-      run: dotnet nuget push "Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo/bin/Release/Riley033.TestDeploymentRepo.${{ steps.version.outputs.version }}.nupkg" --api-key ${{ secrets.NUGET_TOKEN }} --source "github"
+      run: dotnet nuget push "Riley033.TestDeploymentRepo/Riley033.TestDeploymentRepo/bin/Release/Riley033.TestDeploymentRepo.${{ steps.version.outputs.version }}.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
     
 
